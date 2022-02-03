@@ -1,23 +1,32 @@
 package com.spartaglobal.sortmanager.controller;
 
 import com.spartaglobal.sortmanager.Program;
-import com.spartaglobal.sortmanager.model.BubbleSortFactory;
-import com.spartaglobal.sortmanager.model.MergeSortFactory;
-import com.spartaglobal.sortmanager.model.Sort;
-import com.spartaglobal.sortmanager.model.SortFactory;
+import com.spartaglobal.sortmanager.model.*;
 
 import java.util.Random;
 
 public class SortManager {
-
+    private String[] algorithNames = {
+            "mergeSort",
+            "bubbleSort",
+            "binaryTreeSort"
+    };
     public String getAskForAlgorithmMessage(){
-        return "Choose sorting algorithm or enter quit \n \t mergeSort \n \t bubbleSort \n \t quit";
+        StringBuilder sb = new StringBuilder();
+        sb.append("Choose sorting algorithm or enter quit ");
+        for (String name: algorithNames) {
+            sb.append("\n \t ");
+            sb.append(name);
+        }
+        sb.append(" quit");
+        return sb.toString();
     }
     public Sort getSortingAlgorithm(String algorithmName){
         SortFactory algorithm;
         switch (algorithmName){
             case "mergeSort" -> algorithm = new MergeSortFactory();
             case "bubbleSort" -> algorithm = new BubbleSortFactory();
+            case "binaryTreeSort" ->algorithm = new BinaryTreeSortFactory();
             case "quit" -> {
                 algorithm = null;
                 System.exit(1);
