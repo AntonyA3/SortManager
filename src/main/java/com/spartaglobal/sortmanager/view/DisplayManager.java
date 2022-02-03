@@ -10,6 +10,7 @@ public class DisplayManager {
 
     public String getSortingAlgorithm() {
         Scanner scanner = new Scanner(System.in);
+
         return scanner.next();
     }
 
@@ -33,5 +34,10 @@ public class DisplayManager {
         }
         System.out.println(sb.toString());
 
+    }
+
+    public String decideContinuation() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
     }
 }
