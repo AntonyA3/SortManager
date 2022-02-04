@@ -54,6 +54,10 @@ public class BinaryTree {
         this.size = 0;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
     void addValue(int value){
         this.size++;
         if(this.head == null){
