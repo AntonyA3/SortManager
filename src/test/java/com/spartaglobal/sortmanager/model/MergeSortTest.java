@@ -24,7 +24,6 @@ public class MergeSortTest {
         int[] array = new int[10];
         for (int i = 0; i < 10; i++){
             array[i] = random.nextInt(101);
-
         }
         int[] sortedArray = new MergeSort().sort(array);
 

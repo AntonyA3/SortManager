@@ -1,11 +1,13 @@
 package com.spartaglobal.sortmanager.model;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BinaryTree {
     private Node head;
     private int size;
-    private class Node{
+
+    public class Node{
 
         private int value;
         Node leftNode;
@@ -48,10 +50,44 @@ public class BinaryTree {
                 this.rightNode.toIntArray(intArray, i);
             }
         }
+
+        public Node getLeftNode() {
+            return this.leftNode;
+        }
+
+        public Node getRightNode(){
+            return this.rightNode;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    ", leftNode=" + leftNode +
+                    ", rightNode=" + rightNode +
+                    '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node node = (Node) o;
+            return value == node.value && Objects.equals(leftNode, node.leftNode) && Objects.equals(rightNode, node.rightNode);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(value, leftNode, rightNode);
+        }
     }
     BinaryTree(){
         this.head = null;
         this.size = 0;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public Node getHead() {
@@ -75,5 +111,26 @@ public class BinaryTree {
             this.head.toIntArray(intArray, new AtomicInteger(-1));
         }
         return intArray;
+    }
+
+    @Override
+    public String toString() {
+        return "BinaryTree{" +
+                "head=" + head +
+                ", size=" + size +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BinaryTree that = (BinaryTree) o;
+        return size == that.size && Objects.equals(head, that.head);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(head, size);
     }
 }

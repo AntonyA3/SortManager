@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class BubbleSortTest {
     private static BubbleSort bubbleSort;
+
     @BeforeAll
     public static void initialiseMergeSort(){
         bubbleSort = new BubbleSort();
