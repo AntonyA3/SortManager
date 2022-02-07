@@ -58,6 +58,6 @@ All unit tests have passed for this project
 ###BinaryTreeTest
 ![img_1.png](img_1.png)
 ###MergeSortTest
-![img_2.png](img_2.png)
+![img_12.png](img_12.png)
 ###BubbleSortTest
 ![img_3.png](img_3.png)
