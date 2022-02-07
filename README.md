@@ -1,4 +1,4 @@
-#Sort Manager Project \<WIP\>
+#Sort Manager Project
 
 ##Summary
 The sort Manager project is a command line application that allows the user (you) to input numbers in an 
