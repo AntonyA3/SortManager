@@ -39,11 +39,8 @@ Log4j Dependancies
 1. First Enter one or many of the options for sorting algorithms
 ![img_6.png](img_6.png)
 2. You can either enter an array or in the format specified.
-
-   - "2 5 3 33 55 33"
-   - ![img_8.png](img_8.png)
-   - random 1000 10000
-   - ![img_7.png](img_7.png)
+![img_8.png](img_8.png)
+![img_7.png](img_7.png)
 3. The array will be sorted and the result will be outputted. In the results section the **'-'** compares how long each of these algorithms have take in relation to each other.
 ![img_10.png](img_10.png)
 4. Press Y to continue or N to leave the program
