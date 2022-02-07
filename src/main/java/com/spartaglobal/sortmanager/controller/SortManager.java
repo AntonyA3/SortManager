@@ -25,7 +25,7 @@ public class SortManager {
     }
     private int[] arrayToSort = null;
     private ArrayList<Pair<String, Sort>> sortingAlgorithms = new ArrayList<>();
-
+    int[] resultArray = new int[0];
     private String[] algorithNames = {
             "mergeSort",
             "bubbleSort",
@@ -46,12 +46,14 @@ public class SortManager {
         for (String algorithmName: algorithmNames.split(" ")) {
             SortFactory factory = null;
             switch (algorithmName.toLowerCase()){
-                case "mergesort", "merge sort" -> factory = new MergeSortFactory();
-                case "bubblesort", "bubble sort" -> factory = new BubbleSortFactory();
-                case "binarytreesort", "treesort", "binary tree sort"," tree sort" -> factory = new BinaryTreeSortFactory();
+                case "mergesort" -> factory = new MergeSortFactory();
+                case "bubblesort" -> factory = new BubbleSortFactory();
+                case "binarytreesort", "treesort" -> factory = new BinaryTreeSortFactory();
                 default -> Program.logger.error("Invalid sorting Algorithm");
             }
-            sortingAlgorithms.add(new Pair<String, Sort>(factory.getAlgorithmName(), factory.getSortingAlgorithm()));
+            if(factory != null) {
+                sortingAlgorithms.add(new Pair<String, Sort>(factory.getAlgorithmName(), factory.getSortingAlgorithm()));
+            }
         }
     }
 
@@ -116,7 +118,7 @@ public class SortManager {
     public void clearAll(){
         this.arrayToSort = null;
         this.sortingAlgorithms.clear();
-
+        this.resultArray = new int[0];
     }
     public ArrayList<SortingAlgorithmPerformanceResult> sortArrays() {
 
@@ -128,7 +130,7 @@ public class SortManager {
             Sort algorithm = nameAlgorithmPair.getRight();
 
             long start = System.nanoTime();
-            algorithm.sort(arrayToSort);
+            resultArray = algorithm.sort(arrayToSort);
             long end = System.nanoTime();
             long elapsed = end - start;
 
@@ -137,5 +139,9 @@ public class SortManager {
 
         }
         return results;
+    }
+
+    public int[] getResultArray() {
+        return resultArray;
     }
 }

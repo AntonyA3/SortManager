@@ -3,9 +3,9 @@
 ##Summary
 The sort Manager project is a command line application that allows the user (you) to input numbers in an 
 array which you can sort and compare how, long it takes each algorithm to sort the arrays provided.
-. The goal of this project was to demonstate the knowledge and
+The goal of this project was to demonstate the knowledge and
 understanding of the **Log4J**, Design Patterns in particular the **Facade** and **Abstract Factory** design
-pattern.
+pattern and also **JUnit** and The **Model View Controller** Architectural Pattern.
 
 
 ##Dependancies
@@ -34,13 +34,30 @@ Log4j Dependancies
         <version>2.17.1</version>
     </dependency>
 
+##Tutorial
+
+1. First Enter one or many of the options for sorting algorithms
+![img_6.png](img_6.png)
+2. You can either enter an array or in the format specified.
+
+   - "2 5 3 33 55 33"
+   - ![img_8.png](img_8.png)
+   - random 1000 10000
+   - ![img_7.png](img_7.png)
+3. The array will be sorted and the result will be outputted. In the results section the **'-'** compares how long each of these algorithms have take in relation to each other.
+![img_10.png](img_10.png)
+4. Press Y to continue or N to leave the program
+
+![img_11.png](img_11.png)
+
+
 ##Test Result
 All unit tests have passed for this project
-
-BinaryTreeSortTest
-
-BinaryTreeTest
-
-MergeSortTest
-
-BubbleSortTest
+###BinaryTreeSortTest
+![img.png](img.png)
+###BinaryTreeTest
+![img_1.png](img_1.png)
+###MergeSortTest
+![img_2.png](img_2.png)
+###BubbleSortTest
+![img_3.png](img_3.png)

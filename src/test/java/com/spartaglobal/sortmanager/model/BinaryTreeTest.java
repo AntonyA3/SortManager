@@ -1,9 +1,6 @@
 package com.spartaglobal.sortmanager.model;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class BinaryTreeTest {
     private BinaryTree binaryTree;
@@ -12,6 +9,7 @@ public class BinaryTreeTest {
     public void initialiseBinaryTree(){binaryTree = new BinaryTree();}
 
     @Test
+    @DisplayName("Given an initialised Binary tree, when toIntArray() is called, expect an empty array")
     void givenAnInitialisedBinaryTree_expectToIntArrayToReturnAnEmptyArray(){
         int[] expected = new int[0];
         int[] actual = binaryTree.toIntArray();
@@ -19,6 +17,7 @@ public class BinaryTreeTest {
     }
 
     @Test
+    @DisplayName("Given a Binary tree, when 64 has been inserted into the binary tree, after calling toIntArray() expect array of length 1 containing 64")
     void givenABinaryTreeWhereSingleValueIsAdded_expectIntArrayToReturnAnArrayWithTheSingleElement(){
         int[] expected = new int[]{64};
         binaryTree.addValue(64);
@@ -26,6 +25,8 @@ public class BinaryTreeTest {
     }
 
     @Test
+    @DisplayName("Given a binary tree, after inseting the values 16, 5 and 17. Expect the tree to have 3 nodes where the head node has a value of 16," +
+            "the left child of head has a value of 5 and the right child of head has a value of 16")
     void givenABinaryTree_AfterInsertingTheValues_16_5_17_ExpectTheseResults(){
         binaryTree.addValue(16);
         binaryTree.addValue(5);
@@ -37,6 +38,8 @@ public class BinaryTreeTest {
     }
 
     @Test
+    @DisplayName("Given a binary tree, after inseting the values 16, 16 and 17. Expect the tree to have 3 nodes where the head node has a value of 16," +
+            "the left child of head has a value of 16 and the right child of head has a value of 16")
     void givenABinaryTree_AfterInsertingTheValues_16_16_17_ExpectTheseResults(){
         binaryTree.addValue(16);
         binaryTree.addValue(16);

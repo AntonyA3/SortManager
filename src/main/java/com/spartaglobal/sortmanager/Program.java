@@ -1,14 +1,12 @@
 package com.spartaglobal.sortmanager;
 
 import com.spartaglobal.sortmanager.controller.SortManager;
-import com.spartaglobal.sortmanager.model.Sort;
 import com.spartaglobal.sortmanager.model.SortingAlgorithmPerformanceResult;
 import com.spartaglobal.sortmanager.view.DisplayManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Program {
     public static Logger logger = LogManager.getLogger(Program.class.getName());
@@ -19,11 +17,10 @@ public class Program {
         view.displayMessage("==========Sort Manager============ ");
         view.displayMessage("Available At: https://github.com/AntonyA3/SortManager");
 
-        boolean toContinue = false;
         SortManager controller = new SortManager();
         do {
 
-            view.displayMessage("Choose Sorting Algorithms \n" + "mergeSort \n bubbleSort \n binaryTreeSort");
+            view.displayMessage("Choose Sorting Algorithms \n mergeSort \n bubbleSort \n binaryTreeSort");
 
             view.displayMessage("format \n <name> <name> <name>");
             String chosenSortingAlgorithms = view.getUserInput();
@@ -38,10 +35,14 @@ public class Program {
 
 
             view.displayMessage("=====Waiting=======");
+
             ArrayList<SortingAlgorithmPerformanceResult> results = controller.sortArrays();
+            view.displayMessage("=======Sorted Array=======");
+            view.displayArray(controller.getResultArray());
             view.displaySortingAlgorithmResults(results);
 
             view.displayMessage(controller.getContinueQuestion());
+            controller.clearAll();
             logger.debug("Loop Program");
 
         }while (controller.shouldContinue(view.getUserInput()));
