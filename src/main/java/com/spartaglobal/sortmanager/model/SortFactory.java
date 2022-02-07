@@ -1,5 +1,6 @@
 package com.spartaglobal.sortmanager.model;
 
-public interface SortFactory {
-    Sort getSortingAlgorithm();
+public abstract class SortFactory {
+    public abstract Sort getSortingAlgorithm();
+    public abstract String getAlgorithmName();
 }

@@ -1,5 +1,8 @@
 package com.spartaglobal.sortmanager.view;
 
+import com.spartaglobal.sortmanager.model.SortingAlgorithmPerformanceResult;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DisplayManager {
@@ -8,6 +11,7 @@ public class DisplayManager {
         System.out.println(message);
     }
 
+    /*
     public String getSortingAlgorithm() {
         Scanner scanner = new Scanner(System.in);
 
@@ -19,7 +23,11 @@ public class DisplayManager {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
-
+    */
+    public String getUserInput(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
     public void displayArray(int[] result) {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
@@ -36,8 +44,17 @@ public class DisplayManager {
 
     }
 
-    public String decideContinuation() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+    public void displaySortingAlgorithmResults(ArrayList<SortingAlgorithmPerformanceResult> results) {
+        System.out.println("=========Sort Complete===========");
+        for (SortingAlgorithmPerformanceResult result: results) {
+            String name = result.getAlgorithmName();
+            long elapsed = result.getElapsed();
+            String output = String.format("%s Algorithm took %dns (nano seconds) to sort", name, elapsed);
+            System.out.println(output);
+            System.out.println("===================================");
+        }
+        SortingAlgorithmPerformanceResult fastest = null;
+
     }
+
 }
